@@ -74,3 +74,21 @@ resource "google_vertex_ai_endpoint" "prediction_endpoint" {
     owner       = "team-terraform"
   }
 }
+
+# ---------------------------------------------------------
+# 4. Vertex AI Feature Store – Managed store for ML
+#    features (computed values used as model inputs)
+# ---------------------------------------------------------
+resource "google_vertex_ai_featurestore" "feature_store" {
+  name   = "terraform_lab_featurestore"
+  region = "us-central1"
+
+  online_serving_config {
+    fixed_node_count = 1
+  }
+
+  labels = {
+    environment = "development"
+    owner       = "team-terraform"
+  }
+}
