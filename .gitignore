@@ -1,0 +1,7 @@
+# Environment Variables
+.env
+ie7374-labs-terraform-lab1-9252d7066b3b.json
+
+# Terraform files
+.terraform/
+terraform.tfstate
