@@ -36,8 +36,9 @@ resource "google_storage_bucket" "vertex_ai_bucket" {
   force_destroy = true
 
   labels = {
-    environment = "development"
+    environment = "staging" # Change from "development"
     owner       = "team-terraform"
+    project     = "vertex-ai-lab" # New label added
   }
 }
 
@@ -65,11 +66,11 @@ resource "google_vertex_ai_dataset" "tabular_dataset" {
 # ---------------------------------------------------------
 resource "google_vertex_ai_endpoint" "prediction_endpoint" {
   name         = "terraform-lab-endpoint"
-  display_name = "Terraform Lab Prediction Endpoint"
+  display_name = "Terraform Lab Prediction Endpoint v2" # Updated display name
   location     = "us-central1"
 
   labels = {
-    environment = "development"
+    environment = "staging" # Change from "development"
     owner       = "team-terraform"
   }
 }
